@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Controller
 public class DataController {
     private final DataService dataService;
@@ -26,7 +28,7 @@ public class DataController {
         return ResponseEntity.ok(dataServicez.list());
     }
     @PostMapping("/addData")
-    public ResponseEntity addData(@RequestBody DataModel dataModell){
+    public ResponseEntity addData(@RequestBody List<DataModel> dataModell){
         try {
             dataServicez.saveData(dataModell);
             return ResponseEntity.ok("Ok");

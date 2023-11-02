@@ -19,9 +19,13 @@ public class DataService {
         List<DataModel> foundData = dataRepo.findAll();
         return foundData;
     }
-    public DataModel saveData(DataModel dataModel){
-        DataModel _dataModel = new DataModel(dataModel.getId(),dataModel.getAmperage(),dataModel.getVoltage());
-        return dataRepo.save(_dataModel);
+    public List<DataModel> saveData(List<DataModel> dataModels){
+        List<DataModel> savedDataModels = new ArrayList<>();
+        for (DataModel dataModel : dataModels) {
+            DataModel _dataModel = new DataModel(dataModel.getId(), dataModel.getAmperage(), dataModel.getVoltage());
+            savedDataModels.add(dataRepo.save(_dataModel));
+        }
+        return savedDataModels;
     }
 
 }
