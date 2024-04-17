@@ -3,7 +3,7 @@ package com.INA219.INA219.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "data")
+@Table(name = "loss")
 public class LossModel {
 
     @Id
