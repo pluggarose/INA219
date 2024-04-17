@@ -21,12 +21,12 @@ public class LossController {
 
     @Autowired
     private LossService lossServicez;
-    @GetMapping("/showData")
-    public ResponseEntity showData(){
+    @GetMapping("/showLoss")
+    public ResponseEntity showLoss(){
         return ResponseEntity.ok(lossServicez.list());
     }
-    @PostMapping("/addData")
-    public ResponseEntity addData(@RequestBody List<LossModel> lossModell){
+    @PostMapping("/addLoss")
+    public ResponseEntity addLoss(@RequestBody List<LossModel> lossModell){
         try {
             lossServicez.saveData(lossModell);
             return ResponseEntity.ok("Ok");
